@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f4ef" />
+  <title>회복의 기록 · 30일</title>
+  <style>
+    :root{--ink:#292b27;--muted:#77796f;--paper:#f6f4ef;--card:#fffefa;--line:#e8e5dc;--green:#657d66;--green-soft:#e8eee5;--peach:#f5e6dc;--shadow:0 12px 36px #39382a0b}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.55}
+    button,input,textarea{font:inherit}button{cursor:pointer}.shell{max-width:1100px;margin:auto;padding:34px 24px 72px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:50px}.brand{font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--green)}.save{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:#82a17b}
+    .hero{display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:end;margin-bottom:34px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--green);font-weight:700}.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.16;letter-spacing:-.055em;margin:12px 0 14px;font-weight:650}.hero p{margin:0;color:var(--muted);font-size:15px}.progress-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 24px;box-shadow:var(--shadow)}.progress-head{display:flex;align-items:baseline;justify-content:space-between}.progress-head strong{font-size:30px;letter-spacing:-.05em}.progress-head span{font-size:12px;color:var(--muted)}.bar{height:7px;background:#eeece5;border-radius:99px;margin:14px 0 10px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--green);border-radius:99px;transition:width .3s}.progress-foot{font-size:12px;color:var(--muted)}
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start}.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.today{padding:28px 30px}.section-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:23px}.section-head h2{font-size:20px;letter-spacing:-.03em;margin:0}.date-nav{display:flex;align-items:center;gap:12px}.date-nav button{border:1px solid var(--line);background:white;border-radius:9px;width:32px;height:32px;color:var(--muted)}.date-label{font-size:13px;color:var(--muted);min-width:94px;text-align:center}.day-badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-soft);color:#4d694f;padding:6px 11px;border-radius:99px;font-size:12px;font-weight:650;margin-bottom:10px}.day-badge b{font-size:13px}.checklist{display:grid;gap:10px}.check{display:flex;align-items:center;gap:14px;padding:15px 16px;border:1px solid var(--line);border-radius:13px;cursor:pointer;transition:.15s;background:#fff}.check:hover{border-color:#bdcbb9;transform:translateY(-1px)}.check input{position:absolute;opacity:0}.box{width:21px;height:21px;border:1.5px solid #c7c8bd;border-radius:7px;flex:none;display:grid;place-items:center;color:white;transition:.15s}.check input:checked+.box{background:var(--green);border-color:var(--green)}.check input:checked+.box:after{content:"✓";font-size:14px;line-height:1}.check:has(input:checked) .label{color:#77796f;text-decoration:line-through;text-decoration-color:#c9cec5}.label{font-size:14px}.note-area{margin-top:23px}.note-area label{font-size:12px;color:var(--muted);display:block;margin-bottom:8px}.note-area textarea{width:100%;resize:vertical;min-height:78px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px;outline:none;color:var(--ink);font-size:13px}.note-area textarea:focus{border-color:#9bab95}.actions{display:flex;justify-content:space-between;align-items:center;margin-top:18px}.hint{font-size:11px;color:#96978e}.reset{border:0;background:none;color:#8b7065;font-size:12px;padding:8px 0}.side{display:grid;gap:16px}.side-panel{padding:22px}.side-title{font-size:14px;font-weight:700;margin:0 0 16px}.days{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.day{aspect-ratio:1;border-radius:9px;border:1px solid transparent;background:#f0eee8;color:#9a9b91;display:grid;place-items:center;font-size:11px;position:relative}.day.started{background:#e4ebe0;color:#4f694f}.day.done{background:var(--green);color:white}.day.selected{outline:2px solid #bd8d72;outline-offset:1px}.day.future{background:#faf9f5;color:#cccac2}.day small{position:absolute;bottom:3px;font-size:7px;opacity:.8}.legend{display:flex;gap:14px;margin-top:14px;font-size:10px;color:var(--muted)}.legend span{display:flex;align-items:center;gap:5px}.swatch{width:8px;height:8px;border-radius:3px;background:#e4ebe0}.swatch.full{background:var(--green)}.reflection{font-size:13px;color:var(--muted);margin:0}.quote{background:var(--peach);border-radius:18px;padding:20px 21px;color:#75594b;font-size:13px}.quote strong{display:block;color:#674b3e;font-size:11px;margin-bottom:7px;letter-spacing:.04em}.footer{text-align:center;margin-top:26px;color:#96978e;font-size:11px}
+    @media(max-width:780px){.shell{padding:22px 16px 48px}.top{margin-bottom:34px}.hero{grid-template-columns:1fr;gap:22px;margin-bottom:18px}.layout{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.side-panel:first-child{grid-column:1/-1}.today{padding:22px 18px}.section-head h2{font-size:18px}.hero p{font-size:14px}}
+    @media(max-width:480px){.side{grid-template-columns:1fr}.side-panel:first-child{grid-column:auto}.date-nav{gap:7px}.date-label{min-width:82px;font-size:12px}.check{padding:13px}.label{font-size:13px}.save{font-size:10px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><div class="brand">작은 걸음, 나의 회복</div><div class="save"><i class="dot"></i><span id="saveText">이 기기에 자동 저장돼요</span></div></header>
+  <section class="hero">
+    <div><div class="eyebrow">30 DAYS OF RECOVERY</div><h1>조금씩 나아지는<br>나를 기록해요.</h1><p>매일의 체크는 점수가 아니라, 오늘의 나를 살핀 흔적이에요.</p></div>
+    <div class="progress-card"><div class="progress-head"><strong id="dayCount">0 / 30</strong><span>기록한 날</span></div><div class="bar"><i id="progressBar"></i></div><div class="progress-foot" id="progressText">첫 기록을 시작해보세요.</div></div>
+  </section>
+  <section class="layout">
+    <article class="panel today">
+      <div class="section-head"><h2>오늘의 회복 기록</h2><div class="date-nav"><button id="prev" aria-label="이전 날짜">‹</button><span class="date-label" id="dateLabel"></span><button id="next" aria-label="다음 날짜">›</button></div></div>
+      <div class="day-badge"><b id="dayNumber">1일차</b><span>오늘 할 수 있는 만큼</span></div>
+      <div class="checklist" id="checklist"></div>
+      <div class="note-area"><label for="note">오늘의 마음을 짧게 적어둘까요? (선택)</label><textarea id="note" placeholder="예: 마음이 흔들렸지만, 잠깐 멈춰서 내 감정을 들여다봤다."></textarea></div>
+      <div class="actions"><span class="hint">체크와 메모는 이 기기에 자동 저장돼요.</span><button class="reset" id="reset">오늘 기록 초기화</button></div>
+    </article>
+    <aside class="side">
+      <section class="panel side-panel"><h3 class="side-title">30일 한눈에 보기</h3><div class="days" id="days"></div><div class="legend"><span><i class="swatch"></i>기록 시작</span><span><i class="swatch full"></i>모든 항목 체크</span></div></section>
+      <section class="panel side-panel"><h3 class="side-title">이번 기록</h3><p class="reflection" id="reflection">오늘의 작은 행동 하나도 충분히 의미 있어요.</p></section>
+      <div class="quote"><strong>기억해요</strong>회복은 매일 똑같이 좋아지는 일이 아니에요. 오늘의 나를 돌본 순간을 하나씩 모아가요.</div>
+    </aside>
+  </section>
+  <footer class="footer">기록은 이 브라우저에만 저장됩니다. 브라우저 데이터 삭제 시 기록도 지워질 수 있어요.</footer>
+</main>
+<script>
+(()=>{
+  const items=['오늘 식사를 챙겼다','출근하고 업무를 유지했다','희용이에게 먼저 연락하지 않고 감정을 메모했다','카톡을 열어보는 내 행동을 알아차렸다','관계와 무관한 나만의 시간을 보냈다','잠자리에 들기 전 나를 자책하지 않았다'];
+  const KEY='recovery-log-30-v1'; const today=new Date(); today.setHours(0,0,0,0);
+  let data; try{data=JSON.parse(localStorage.getItem(KEY)||'null')}catch{data=null}
+  if(!data||!data.start){data={start:today.toISOString(),entries:{}};save()}
+  const start=new Date(data.start);start.setHours(0,0,0,0);let selected=clamp(Math.floor((today-start)/86400000),0,29);
+  const $=id=>document.getElementById(id), dateAt=n=>new Date(start.getTime()+n*86400000), keyAt=n=>dateAt(n).toISOString().slice(0,10), entry=n=>data.entries[keyAt(n)]||{checks:[],note:''};
+  function clamp(n,a,b){return Math.max(a,Math.min(b,n))} function save(){localStorage.setItem(KEY,JSON.stringify(data))}
+  function dateFmt(d,opts={month:'long',day:'numeric',weekday:'short'}){return new Intl.DateTimeFormat('ko-KR',opts).format(d)}
+  function render(){const e=entry(selected),d=dateAt(selected);$('dateLabel').textContent=dateFmt(d);$('dayNumber').textContent=(selected+1)+'일차';$('prev').disabled=selected===0;$('next').disabled=selected===29;
+    $('checklist').innerHTML=items.map((t,i)=>`<label class="check"><input type="checkbox" data-i="${i}" ${e.checks.includes(i)?'checked':''}><span class="box"></span><span class="label">${t}</span></label>`).join('');
+    $('checklist').querySelectorAll('input').forEach(x=>x.addEventListener('change',()=>{const v=entry(selected);v.checks=x.checked?[...new Set([...v.checks,+x.dataset.i])]:v.checks.filter(i=>i!==+x.dataset.i);data.entries[keyAt(selected)]=v;save();renderSummary()}));
+    $('note').value=e.note||'';$('note').oninput=()=>{const v=entry(selected);v.note=$('note').value;data.entries[keyAt(selected)]=v;save();renderSummary()};renderSummary();renderDays();
+  }
+  function renderSummary(){const recorded=Object.values(data.entries).filter(e=>(e.checks&&e.checks.length)||e.note?.trim()).length;const checked=entry(selected).checks.length;$('dayCount').textContent=`${recorded} / 30`;$('progressBar').style.width=`${Math.round(recorded/30*100)}%`;$('progressText').textContent=recorded?`지금까지 ${recorded}일의 나를 기록했어요.`:'첫 기록을 시작해보세요.';$('reflection').textContent=checked===6?'오늘 여섯 가지를 모두 해냈어요. 스스로에게 다정한 말을 건네주세요.':checked?`오늘 ${checked}개의 돌봄 행동을 기록했어요. 이것만으로도 충분히 의미 있어요.`:'오늘의 작은 행동 하나도 충분히 의미 있어요.'}
+  function renderDays(){$('days').innerHTML=Array.from({length:30},(_,i)=>{const e=entry(i),has=(e.checks&&e.checks.length)||e.note?.trim(),full=e.checks?.length===6;return `<button class="day ${has?'started':''} ${full?'done':''} ${i===selected?'selected':''} ${i>(today-start)/86400000?'future':''}" data-day="${i}" aria-label="${i+1}일차${has?' 기록 있음':''}">${i+1}${has?'<small>•</small>':''}</button>`}).join('');$('days').querySelectorAll('button').forEach(b=>b.onclick=()=>{selected=+b.dataset.day;render()})}
+  $('prev').onclick=()=>{selected=clamp(selected-1,0,29);render()};$('next').onclick=()=>{selected=clamp(selected+1,0,29);render()};$('reset').onclick=()=>{if(!confirm('이 날짜의 체크와 메모를 모두 지울까요?'))return;delete data.entries[keyAt(selected)];save();render()};render();
+})();
+</script>
+</body>
+</html>
